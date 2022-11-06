@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Prepare Husky
+yarn prepare || {
+  echo "Problem with Husky"
+  false;
+}
+
+# Running tests
+yarn test:nowatch || {
+  echo "Error in tests"
+  false;
+}
+
+# Check Types - TypeScript
+yarn check-types || {
+  echo "Error in check types - TypeScript"
+  false;
+}
+
+# Check Prettier
+yarn format && yarn check-format || {
+  echo "Error - Prettier"
+  false;
+}
+
+# Check ESLint
+yarn lint:fix && yarn lint || {
+  echo "Error - ESLint"
+  false;
+}
+
+
+
