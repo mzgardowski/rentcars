@@ -65,6 +65,7 @@
     { "files": "**/*.+(ts|tsx)" }
   ],
   "ignorePatterns": [
+    "src/**/*.test.tsx",
     "src/**/*.test.ts",
     "src/frontend/generated/*",
     "package.json"
