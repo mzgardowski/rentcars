@@ -8,10 +8,10 @@ yarn prepare || {
 }
 
 # Running tests
-yarn test:nowatch || {
-  echo "Error in tests"
-  false;
-}
+# yarn test:nowatch || {
+#   echo "Error in tests"
+#   false;
+# }
 
 # Check Types - TypeScript
 yarn check-types || {
